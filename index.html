@@ -1,0 +1,1376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrightMedia Graphix | Portfolio</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="248x248"
+      href="images/brightmedia logo.png"
+    />
+    <link rel="apple-touch-icon" href="images/brightmedia logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0b1120; /* Deep Blueish Background */
+        color: #fff;
+      }
+
+      .navbar {
+        background: whitesmoke;
+        border-bottom: 2px solid #fd7e14; /* Orange accent */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+
+      .navbar img {
+        height: 20px;
+        width: auto;
+        margin-right: 15px;
+      }
+
+      .nav-link {
+        color: #fd7e14 !important;
+        font-weight: 600;
+        font-size: 1.05rem;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: #fff !important;
+      }
+
+      .hero-section {
+        background:
+          linear-gradient(
+            135deg,
+            rgba(13, 110, 253, 0.9) 0%,
+            rgba(59, 130, 246, 0.9) 100%
+          ),
+          url("images/my work.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding: 100px 0;
+        margin-bottom: 50px;
+      }
+
+      .portfolio-card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        background: #1e293b;
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(253, 126, 20, 0.3); /* Orange glow */
+      }
+
+      .btn-primary {
+        background-color: #fd7e14; /* Orange Button */
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background-color: #e66d00;
+      }
+
+      .text-purple {
+        color: #a855f7;
+      }
+      .text-orange {
+        color: #fd7e14;
+      }
+
+      .hero-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+      }
+
+      .hero-text {
+        flex: 1;
+        text-align: center;
+        max-width: 600px;
+      }
+
+      .hero-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(253, 126, 20, 0.2);
+      }
+
+      @media (max-width: 768px) {
+        .hero-content {
+          flex-direction: column;
+          gap: 20px;
+        }
+        .hero-text {
+          text-align: center;
+        }
+      }
+
+      .about-section {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        padding: 80px 0;
+        margin-bottom: 50px;
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .about-image {
+        flex: 1;
+      }
+
+      .about-image img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(253, 126, 20, 0.3);
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .about-text h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .about-text h3 {
+        color: #fd7e14;
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+        font-weight: 600;
+      }
+
+      .about-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 15px;
+        color: #e2e8f0;
+      }
+
+      .about-highlight {
+        color: #fd7e14;
+        font-weight: 600;
+      }
+
+      @media (max-width: 768px) {
+        .about-content {
+          flex-direction: column;
+          gap: 30px;
+        }
+        .about-text h2 {
+          font-size: 1.8rem;
+        }
+      }
+
+      .portfolio-section {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        padding: 80px 0;
+        margin: 50px 0;
+      }
+
+      .portfolio-scroll-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        padding: 30px 0;
+      }
+
+      @media (max-width: 1400px) {
+        .portfolio-scroll-container {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .portfolio-scroll-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .portfolio-scroll-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .portfolio-scroll-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .portfolio-item {
+        border-radius: 20px;
+        overflow: hidden;
+        background: #0f172a;
+        border: 2px solid rgba(253, 126, 20, 0.2);
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-15px);
+        border-color: #fd7e14;
+        box-shadow: 0 20px 50px rgba(253, 126, 20, 0.4);
+      }
+
+      .portfolio-item-image {
+        position: relative;
+        overflow: hidden;
+        height: 350px;
+      }
+
+      .portfolio-item-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .portfolio-item:hover .portfolio-item-image img {
+        transform: scale(1.05);
+      }
+
+      .portfolio-item-overlay {
+        display: none;
+      }
+
+      .portfolio-item-content {
+        padding: 25px;
+      }
+
+      .portfolio-item-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #fd7e14;
+        margin-bottom: 10px;
+      }
+
+      .portfolio-item-desc {
+        color: #cbd5e1;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .portfolio-download-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #fd7e14 0%, #e66d00 100%);
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+      }
+
+      .portfolio-download-btn:hover {
+        transform: translateX(5px);
+        box-shadow: 0 8px 20px rgba(253, 126, 20, 0.4);
+      }
+
+      .reviews-section {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        padding: 80px 0;
+        margin: 50px 0;
+      }
+
+      .reviews-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        padding: 30px 0;
+      }
+
+      @media (max-width: 1200px) {
+        .reviews-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .reviews-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .review-card {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        border: 2px solid rgba(253, 126, 20, 0.2);
+        border-radius: 15px;
+        padding: 30px;
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .review-card:hover {
+        transform: translateY(-10px);
+        border-color: #fd7e14;
+        box-shadow: 0 20px 50px rgba(253, 126, 20, 0.3);
+      }
+
+      .review-conversation {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .review-message {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 15px;
+      }
+
+      .review-message.client {
+        justify-content: flex-end;
+      }
+
+      .review-bubble {
+        max-width: 100%;
+        padding: 15px 20px;
+        border-radius: 12px;
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .review-message.client .review-bubble {
+        background: rgba(253, 126, 20, 0.2);
+        border: 1px solid #fd7e14;
+        color: #e2e8f0;
+      }
+
+      .review-message.company .review-bubble {
+        background: rgba(59, 130, 246, 0.2);
+        border: 1px solid #3b82f6;
+        color: #cbd5e1;
+      }
+
+      .review-client-name {
+        font-weight: 700;
+        color: #fd7e14;
+        margin-bottom: 10px;
+        font-size: 1rem;
+      }
+
+      .review-company-name {
+        font-weight: 700;
+        color: #3b82f6;
+        margin-bottom: 5px;
+        font-size: 0.85rem;
+      }
+
+      .message-label {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+      }
+
+      .client-message .message-label {
+        color: #fd7e14;
+      }
+
+      .brightmedia-message .message-label {
+        color: #3b82f6;
+      }
+
+      .contact-section {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        padding: 80px 0;
+        margin: 50px 0;
+      }
+
+      .contact-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 60px;
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        padding: 30px 0;
+      }
+
+      .contact-card {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        border: 2px solid rgba(253, 126, 20, 0.2);
+        border-radius: 15px;
+        padding: 40px 30px;
+        text-align: center;
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .contact-card:hover {
+        transform: translateY(-10px);
+        border-color: #fd7e14;
+        box-shadow: 0 20px 50px rgba(253, 126, 20, 0.3);
+      }
+
+      .contact-icon {
+        font-size: 3rem;
+        color: #fd7e14;
+        margin-bottom: 20px;
+      }
+
+      .contact-card h3 {
+        font-size: 1.3rem;
+        color: #e2e8f0;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .contact-card p {
+        color: #cbd5e1;
+        font-size: 1rem;
+        margin-bottom: 0;
+        line-height: 1.6;
+      }
+
+      .contact-links {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+
+      .contact-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: rgba(253, 126, 20, 0.2);
+        border: 2px solid #fd7e14;
+        border-radius: 50%;
+        color: #fd7e14;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
+      }
+
+      .contact-link:hover {
+        background: #fd7e14;
+        color: #0b1120;
+        transform: scale(1.1);
+      }
+
+      @media (max-width: 768px) {
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-section h2 {
+          font-size: 2rem;
+        }
+      }
+
+      .visitor-section {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        padding: 60px 0;
+        margin: 50px 0;
+        border-top: 2px solid rgba(253, 126, 20, 0.2);
+        border-bottom: 2px solid rgba(253, 126, 20, 0.2);
+      }
+
+      .visitor-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .visitor-title {
+        font-size: 1.3rem;
+        color: #e2e8f0;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      .visitor-counter {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          rgba(253, 126, 20, 0.1),
+          rgba(59, 130, 246, 0.1)
+        );
+        border: 2px solid rgba(253, 126, 20, 0.3);
+        border-radius: 15px;
+        padding: 30px 50px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .visitor-counter img {
+        filter: brightness(1.1);
+      }
+
+      .visitor-message {
+        font-size: 0.95rem;
+        color: #cbd5e1;
+        text-align: center;
+        font-style: italic;
+        margin-top: 10px;
+      }
+
+      .visitor-icon {
+        font-size: 1.5rem;
+        color: #fd7e14;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a href="#home"><img src="images/brightmedia logo.png" alt="" /></a>
+        <a class="navbar-brand fw-bold italic" href="#home">
+          <span class="text-orange">Bright</span
+          ><span class="text-orange">Media</span>
+          <span class="text-primary">Graphix</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#review">Review</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="display-3 fw-bold">
+              Creative Vision. <br />Bold Design.
+            </h1>
+            <p class="lead mt-3">Visual storytelling for the modern brand.</p>
+            <a href="#work" class="btn btn-primary btn-lg px-5 mt-4"
+              >View Gallery</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-image">
+            <img src="images/me.png" alt="Holybright Shitiavai" />
+          </div>
+          <div class="about-text">
+            <h2>About <span class="text-orange">Me</span></h2>
+            <h3>Mr. Holybright Shitiavai</h3>
+            <p>
+              Welcome to my creative space. I'm a passionate graphic designer
+              with a genuine love for visual storytelling and design excellence.
+            </p>
+            <p>
+              <span class="about-highlight">Educational Background:</span><br />
+              I completed my
+              <span class="about-highlight"
+                >BSc in Mathematics and Computer Science</span
+              >
+              at Tom Mboya University, graduating in 2025 with
+              <span class="about-highlight">Second Class Upper Division</span>
+              honors. During my second year, I discovered my true passion for
+              graphic design, and this ignited a journey of continuous learning
+              and creative growth.
+            </p>
+            <p>
+              <span class="about-highlight">Professional Journey:</span><br />
+              With over 2 years of dedicated experience in graphic design, I've
+              honed my skills to deliver
+              <span class="about-highlight"
+                >quality designs that tell compelling stories</span
+              >
+              for diverse organizations. My work is driven by the belief that
+              great design communicates more effectively than words alone.
+            </p>
+            <p>
+              <span class="about-highlight">Personal Values:</span><br />
+              I am a born-again Christian, and my faith shapes my integrity,
+              creativity, and commitment to excellence in everything I do. I
+              believe in creating designs that are not only visually stunning
+              but also meaningful and purposeful.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-section">
+      <div class="container-fluid">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold" style="font-size: 2.5rem">
+            My <span class="text-orange">Portfolio</span>
+          </h2>
+          <p class="lead mt-3" style="color: #cbd5e1">
+            Stunning graphic design work that tells your story
+          </p>
+          <div
+            style="
+              width: 60px;
+              height: 5px;
+              background: #fd7e14;
+              margin: 15px auto;
+            "
+          ></div>
+        </div>
+
+        <div class="portfolio-scroll-container">
+          <!-- Portfolio Item 1 - Reversed: Last becomes First -->
+          <div class="portfolio-item">
+            <div class="portfolio-item-image">
+              <img
+                src="images/WhatsApp Image 2026-01-27 at 12.40.09.jpeg"
+                alt="Design 1"
+              />
+              <div class="portfolio-item-overlay">
+                <button
+                  class="portfolio-download-btn"
+                  onclick="
+                    downloadImage(
+                      'images/WhatsApp Image 2026-01-27 at 12.40.09.jpeg',
+                      'design-1',
+                    )
+                  "
+                >
+                  ⬇ Download
+                </button>
+              </div>
+            </div>
+            <div class="portfolio-item-content">
+              <h3 class="portfolio-item-title">Portfolio Showcase</h3>
+              <p class="portfolio-item-desc">
+                A complete showcase of design expertise and creativity.
+              </p>
+              <a
+                href="images/WhatsApp Image 2026-01-27 at 12.40.09.jpeg"
+                class="portfolio-download-btn"
+                download
+              >
+                ⬇ Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 2 -->
+          <div class="portfolio-item">
+            <div class="portfolio-item-image">
+              <img
+                src="images/WhatsApp Image 2026-01-27 at 12.40.08.jpeg"
+                alt="Design 2"
+              />
+              <div class="portfolio-item-overlay">
+                <button
+                  class="portfolio-download-btn"
+                  onclick="
+                    downloadImage(
+                      'images/WhatsApp Image 2026-01-27 at 12.40.08.jpeg',
+                      'design-2',
+                    )
+                  "
+                >
+                  ⬇ Download
+                </button>
+              </div>
+            </div>
+            <div class="portfolio-item-content">
+              <h3 class="portfolio-item-title">Stunning Graphics</h3>
+              <p class="portfolio-item-desc">
+                Visually stunning graphics that captivate audiences.
+              </p>
+              <a
+                href="images/WhatsApp Image 2026-01-27 at 12.40.08.jpeg"
+                class="portfolio-download-btn"
+                download
+              >
+                ⬇ Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 3 -->
+          <div class="portfolio-item">
+            <div class="portfolio-item-image">
+              <img
+                src="images/WhatsApp Image 2026-01-27 at 12.40.04.jpeg"
+                alt="Design 3"
+              />
+              <div class="portfolio-item-overlay">
+                <button
+                  class="portfolio-download-btn"
+                  onclick="
+                    downloadImage(
+                      'images/WhatsApp Image 2026-01-27 at 12.40.04.jpeg',
+                      'design-3',
+                    )
+                  "
+                >
+                  ⬇ Download
+                </button>
+              </div>
+            </div>
+            <div class="portfolio-item-content">
+              <h3 class="portfolio-item-title">Strategic Design</h3>
+              <p class="portfolio-item-desc">
+                Strategic designs that drive engagement and impact.
+              </p>
+              <a
+                href="images/WhatsApp Image 2026-01-27 at 12.40.04.jpeg"
+                class="portfolio-download-btn"
+                download
+              >
+                ⬇ Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 4 -->
+          <div class="portfolio-item">
+            <div class="portfolio-item-image">
+              <img
+                src="images/WhatsApp Image 2026-01-27 at 12.40.03.jpeg"
+                alt="Design 4"
+              />
+              <div class="portfolio-item-overlay">
+                <button
+                  class="portfolio-download-btn"
+                  onclick="
+                    downloadImage(
+                      'images/WhatsApp Image 2026-01-27 at 12.40.03.jpeg',
+                      'design-4',
+                    )
+                  "
+                >
+                  ⬇ Download
+                </button>
+              </div>
+            </div>
+            <div class="portfolio-item-content">
+              <h3 class="portfolio-item-title">Brand Vision</h3>
+              <p class="portfolio-item-desc">
+                Designs that bring your brand vision to life.
+              </p>
+              <a
+                href="images/WhatsApp Image 2026-01-27 at 12.40.03.jpeg"
+                class="portfolio-download-btn"
+                download
+              >
+                ⬇ Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 5 -->
+          <div class="portfolio-item">
+            <div class="portfolio-item-image">
+              <img
+                src="images/WhatsApp Image 2026-01-27 at 12.40.02.jpeg"
+                alt="Design 5"
+              />
+              <div class="portfolio-item-overlay">
+                <button
+                  class="portfolio-download-btn"
+                  onclick="
+                    downloadImage(
+                      'images/WhatsApp Image 2026-01-27 at 12.40.02.jpeg',
+                      'design-5',
+                    )
+                  "
+                >
+                  ⬇ Download
+                </button>
+              </div>
+            </div>
+            <div class="portfolio-item-content">
+              <h3 class="portfolio-item-title">Creative Work</h3>
+              <p class="portfolio-item-desc">
+                Original designs that showcase your brand uniqueness.
+              </p>
+              <a
+                href="images/WhatsApp Image 2026-01-27 at 12.40.02.jpeg"
+                class="portfolio-download-btn"
+                download
+              >
+                ⬇ Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 6 -->
+          <div class="portfolio-item">
+            <div class="portfolio-item-image">
+              <img
+                src="images/WhatsApp Image 2026-01-27 at 12.40.01.jpeg"
+                alt="Design 6"
+              />
+              <div class="portfolio-item-overlay">
+                <button
+                  class="portfolio-download-btn"
+                  onclick="
+                    downloadImage(
+                      'images/WhatsApp Image 2026-01-27 at 12.40.01.jpeg',
+                      'design-6',
+                    )
+                  "
+                >
+                  ⬇ Download
+                </button>
+              </div>
+            </div>
+            <div class="portfolio-item-content">
+              <h3 class="portfolio-item-title">Professional Graphics</h3>
+              <p class="portfolio-item-desc">
+                Graphics designed with precision and creativity.
+              </p>
+              <a
+                href="images/WhatsApp Image 2026-01-27 at 12.40.01.jpeg"
+                class="portfolio-download-btn"
+                download
+              >
+                ⬇ Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 7 -->
+          <div class="portfolio-item">
+            <div class="portfolio-item-image">
+              <img
+                src="images/WhatsApp Image 2026-01-27 at 12.39.57.jpeg"
+                alt="Design 7"
+              />
+              <div class="portfolio-item-overlay">
+                <button
+                  class="portfolio-download-btn"
+                  onclick="
+                    downloadImage(
+                      'images/WhatsApp Image 2026-01-27 at 12.39.57.jpeg',
+                      'design-7',
+                    )
+                  "
+                >
+                  ⬇ Download
+                </button>
+              </div>
+            </div>
+            <div class="portfolio-item-content">
+              <h3 class="portfolio-item-title">Quality Designs</h3>
+              <p class="portfolio-item-desc">
+                Meticulous attention to quality in every project.
+              </p>
+              <a
+                href="images/WhatsApp Image 2026-01-27 at 12.39.57.jpeg"
+                class="portfolio-download-btn"
+                download
+              >
+                ⬇ Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 8 -->
+          <div class="portfolio-item">
+            <div class="portfolio-item-image">
+              <img
+                src="images/WhatsApp Image 2026-01-27 at 12.39.54.jpeg"
+                alt="Design 8"
+              />
+              <div class="portfolio-item-overlay">
+                <button
+                  class="portfolio-download-btn"
+                  onclick="
+                    downloadImage(
+                      'images/WhatsApp Image 2026-01-27 at 12.39.54.jpeg',
+                      'design-8',
+                    )
+                  "
+                >
+                  ⬇ Download
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 18 -->
+          <div class="portfolio-item">
+            <div class="portfolio-item-image">
+              <img src="images/ignite4-5.png" alt="Design 18" />
+              <div class="portfolio-item-overlay">
+                <button
+                  class="portfolio-download-btn"
+                  onclick="
+                    downloadImage('images/ignite4-5.png', 'ignite-design')
+                  "
+                >
+                  ⬇ Download
+                </button>
+              </div>
+            </div>
+            <div class="portfolio-item-content">
+              <h3 class="portfolio-item-title">Marketing Material</h3>
+              <p class="portfolio-item-desc">
+                Professional marketing designs crafted to engage and convert
+                your audience.
+              </p>
+              <a
+                href="images/ignite4-5.png"
+                class="portfolio-download-btn"
+                download
+              >
+                ⬇ Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 19 -->
+          <div class="portfolio-item">
+            <div class="portfolio-item-image">
+              <img src="images/madam june.png" alt="Design 19" />
+              <div class="portfolio-item-overlay">
+                <button
+                  class="portfolio-download-btn"
+                  onclick="downloadImage('images/madam june.png', 'madam-june')"
+                >
+                  ⬇ Download
+                </button>
+              </div>
+            </div>
+            <div class="portfolio-item-content">
+              <h3 class="portfolio-item-title">Portrait Design</h3>
+              <p class="portfolio-item-desc">
+                Elegant portrait and personal branding designs with artistic
+                excellence.
+              </p>
+              <a
+                href="images/madam june.png"
+                class="portfolio-download-btn"
+                download
+              >
+                ⬇ Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 20 -->
+          <div class="portfolio-item">
+            <div class="portfolio-item-image">
+              <img src="images/belcher2.png" alt="Design 20" />
+              <div class="portfolio-item-overlay">
+                <button
+                  class="portfolio-download-btn"
+                  onclick="downloadImage('images/belcher2.png', 'belcher2')"
+                >
+                  ⬇ Download
+                </button>
+              </div>
+            </div>
+            <div class="portfolio-item-content">
+              <h3 class="portfolio-item-title">Brand Identity</h3>
+              <p class="portfolio-item-desc">
+                Exceptional branding work that communicates your organization's
+                vision and values.
+              </p>
+              <a
+                href="images/belcher2.png"
+                class="portfolio-download-btn"
+                download
+              >
+                ⬇ Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 21 -->
+          <div class="portfolio-item">
+            <div class="portfolio-item-image">
+              <img src="images/brayo.png" alt="Design 21" />
+              <div class="portfolio-item-overlay">
+                <button
+                  class="portfolio-download-btn"
+                  onclick="downloadImage('images/brayo.png', 'brayo')"
+                >
+                  ⬇ Download
+                </button>
+              </div>
+            </div>
+            <div class="portfolio-item-content">
+              <h3 class="portfolio-item-title">Professional Design</h3>
+              <p class="portfolio-item-desc">
+                Creative graphic design showcasing modern aesthetics and
+                professional quality.
+              </p>
+              <a
+                href="images/brayo.png"
+                class="portfolio-download-btn"
+                download
+              >
+                ⬇ Download
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="review" class="reviews-section">
+      <div class="container">
+        <h2 class="text-center mb-5 section-title">What Our Clients Say</h2>
+        <div class="reviews-container">
+          <!-- Review 1: Faithy Faithy -->
+          <div class="review-card">
+            <div class="review-conversation">
+              <div class="review-message client-message">
+                <span class="message-label">Client (Faithy)</span>
+                <div class="review-bubble">
+                  <p>
+                    "I needed a complete rebrand for my beauty line and
+                    BrightMedia exceeded all my expectations!"
+                  </p>
+                </div>
+              </div>
+              <div class="review-message brightmedia-message">
+                <span class="message-label">BrightMedia Graphix</span>
+                <div class="review-bubble">
+                  <p>
+                    "Thank you Faithy! Your vision was clear and we loved
+                    bringing those designs to life. The color palette perfectly
+                    captures your brand essence."
+                  </p>
+                </div>
+              </div>
+              <div class="review-message client-message">
+                <span class="message-label">Client (Faithy)</span>
+                <div class="review-bubble">
+                  <p>
+                    "The turnaround time was impressive and the quality is
+                    outstanding. Highly recommended! 5 stars!"
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="review-footer">
+              <p class="review-client-name">Faithy Faithy</p>
+              <p class="review-company-name">Beauty & Cosmetics Owner</p>
+            </div>
+          </div>
+
+          <!-- Review 2: Brian Brian -->
+          <div class="review-card">
+            <div class="review-conversation">
+              <div class="review-message client-message">
+                <span class="message-label">Client (Brian)</span>
+                <div class="review-bubble">
+                  <p>
+                    "We needed marketing materials fast. BrightMedia understood
+                    our timeline and delivered premium designs on schedule."
+                  </p>
+                </div>
+              </div>
+              <div class="review-message brightmedia-message">
+                <span class="message-label">BrightMedia Graphix</span>
+                <div class="review-bubble">
+                  <p>
+                    "We appreciate your trust, Brian. Meeting tight deadlines
+                    without compromising quality is what we do best!"
+                  </p>
+                </div>
+              </div>
+              <div class="review-message client-message">
+                <span class="message-label">Client (Brian)</span>
+                <div class="review-bubble">
+                  <p>
+                    "The designs have already boosted our campaign engagement by
+                    40%. Absolutely fantastic work!"
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="review-footer">
+              <p class="review-client-name">Brian Brian</p>
+              <p class="review-company-name">Marketing Director</p>
+            </div>
+          </div>
+
+          <!-- Review 3: Belcher Mudegu -->
+          <div class="review-card">
+            <div class="review-conversation">
+              <div class="review-message client-message">
+                <span class="message-label">Client (Belcher)</span>
+                <div class="review-bubble">
+                  <p>
+                    "I was skeptical about outsourcing our design work, but
+                    BrightMedia proved to be professionals through and through."
+                  </p>
+                </div>
+              </div>
+              <div class="review-message brightmedia-message">
+                <span class="message-label">BrightMedia Graphix</span>
+                <div class="review-bubble">
+                  <p>
+                    "We're glad we could ease your concerns, Belcher. Your
+                    project became one of our portfolio favorites!"
+                  </p>
+                </div>
+              </div>
+              <div class="review-message client-message">
+                <span class="message-label">Client (Belcher)</span>
+                <div class="review-bubble">
+                  <p>
+                    "The attention to detail is incredible. Every element was
+                    perfectly crafted. Will definitely work with you again!"
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="review-footer">
+              <p class="review-client-name">Belcher Mudegu</p>
+              <p class="review-company-name">Tech Startup Founder</p>
+            </div>
+          </div>
+
+          <!-- Review 4: Madam June -->
+          <div class="review-card">
+            <div class="review-conversation">
+              <div class="review-message client-message">
+                <span class="message-label">Client (Madam June)</span>
+                <div class="review-bubble">
+                  <p>
+                    "BrightMedia created a visual identity that truly represents
+                    our Non-Profit's mission. They understood our values
+                    instantly."
+                  </p>
+                </div>
+              </div>
+              <div class="review-message brightmedia-message">
+                <span class="message-label">BrightMedia Graphix</span>
+                <div class="review-bubble">
+                  <p>
+                    "Your organization's impact story deserved beautiful design.
+                    We're honored to support your mission, Madam June!"
+                  </p>
+                </div>
+              </div>
+              <div class="review-message client-message">
+                <span class="message-label">Client (Madam June)</span>
+                <div class="review-bubble">
+                  <p>
+                    "Donations have increased since the rebrand and our
+                    volunteers love wearing the new branded materials. Thank
+                    you!"
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="review-footer">
+              <p class="review-client-name">Madam June</p>
+              <p class="review-company-name">Non-Profit Director</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2 class="text-center mb-5 section-title">
+          Get In <span class="text-orange">Touch</span>
+        </h2>
+        <div class="contact-container">
+          <!-- Phone & WhatsApp -->
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3>Call & WhatsApp</h3>
+            <p>0702935701</p>
+            <div class="contact-links">
+              <a href="tel:0702935701" class="contact-link" title="Call">
+                <i class="fas fa-phone"></i>
+              </a>
+              <a
+                href="https://wa.me/254702935701"
+                target="_blank"
+                class="contact-link"
+                title="WhatsApp"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Social Media -->
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-share-alt"></i>
+            </div>
+            <h3>Follow Us</h3>
+            <p>Connect on Social Media</p>
+            <div class="contact-links">
+              <a
+                href="https://web.facebook.com/holybright.shitiavai.5"
+                target="_blank"
+                class="contact-link"
+                title="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://instagram.com/hshitiavai"
+                target="_blank"
+                class="contact-link"
+                title="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3>Location</h3>
+            <p>Online</p>
+            <p style="font-size: 0.9rem; color: #94a3b8">Available Worldwide</p>
+          </div>
+
+          <!-- Email -->
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email</h3>
+            <p>shitiavaiholybright@gmail.com</p>
+            <div class="contact-links">
+              <a
+                href="mailto:shitiavaiholybright@gmail.com"
+                class="contact-link"
+                title="Email"
+              >
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="visitor-section">
+      <div class="container">
+        <div class="visitor-container">
+          <div class="visitor-title">
+            <i class="visitor-icon fas fa-eye"></i>
+            Thank You For Visiting!
+          </div>
+          <div class="visitor-counter">
+            <!-- Visitor Counter Widget -->
+            <script
+              async
+              src="https://www.freecounterstat.com/counter.js?i=1321e5a8e0d6f6a"
+            ></script>
+            <noscript>
+              <img
+                src="https://www.freecounterstat.com/counter.php?i=1321e5a8e0d6f6a"
+                alt="Counter"
+              />
+            </noscript>
+          </div>
+          <p class="visitor-message">
+            Your visit helps us improve. We appreciate every viewer! 🎨
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-4 text-center border-top border-secondary mt-5">
+      <p class="small text-secondary">
+        &copy; 2026 BrightMedia Graphix. All Rights Reserved.
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function downloadImage(imagePath, imageName) {
+        const link = document.createElement("a");
+        link.href = imagePath;
+        link.download = imageName || "design";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    </script>
+  </body>
+</html>
