@@ -207,7 +207,69 @@
         }
       }
 
-     
+     .reviews-section {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    padding: 80px 0;
+    color: #fff;
+  }
+
+  .review-card {
+    background: #1e293b;
+    border: 1px solid rgba(253, 126, 20, 0.2);
+    border-radius: 20px;
+    padding: 25px;
+    height: 100%;
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+
+  /* Your Requested Hover Shadow */
+  .review-card:hover {
+    transform: translateY(-10px);
+    border-color: #fd7e14;
+    box-shadow: 0 10px 30px rgba(253, 126, 20, 0.4);
+  }
+
+  .chat-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .bubble {
+    max-width: 85%;
+    padding: 12px 16px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    position: relative;
+  }
+
+  /* Client Message (Right side) */
+  .bubble-client {
+    align-self: flex-end;
+    background: rgba(253, 126, 20, 0.15);
+    color: #fd7e14;
+    border: 1px solid #fd7e14;
+    border-bottom-right-radius: 2px;
+  }
+
+  /* BrightMedia Response (Left side) */
+  .bubble-media {
+    align-self: flex-start;
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid #3b82f6;
+    border-bottom-left-radius: 2px;
+  }
+
+  .user-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    display: block;
+  }
 
       .reviews-section {
         background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -316,69 +378,6 @@
         color: #3b82f6;
       }
 
-      .reviews-section {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-    padding: 80px 0;
-    color: #fff;
-  }
-
-  .review-card {
-    background: #1e293b;
-    border: 1px solid rgba(253, 126, 20, 0.2);
-    border-radius: 20px;
-    padding: 25px;
-    height: 100%;
-    transition: all 0.3s ease;
-    cursor: default;
-  }
-
-  /* Your Requested Hover Shadow */
-  .review-card:hover {
-    transform: translateY(-10px);
-    border-color: #fd7e14;
-    box-shadow: 0 10px 30px rgba(253, 126, 20, 0.4);
-  }
-
-  .chat-box {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .bubble {
-    max-width: 85%;
-    padding: 12px 16px;
-    border-radius: 15px;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    position: relative;
-  }
-
-  /* Client Message (Right side) */
-  .bubble-client {
-    align-self: flex-end;
-    background: rgba(253, 126, 20, 0.15);
-    color: #fd7e14;
-    border: 1px solid #fd7e14;
-    border-bottom-right-radius: 2px;
-  }
-
-  /* BrightMedia Response (Left side) */
-  .bubble-media {
-    align-self: flex-start;
-    background: rgba(59, 130, 246, 0.15);
-    color: #60a5fa;
-    border: 1px solid #3b82f6;
-    border-bottom-left-radius: 2px;
-  }
-
-  .user-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-    display: block;
-  }
       .contact-section {
         background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         padding: 80px 0;
